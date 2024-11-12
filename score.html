@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+  <div id="game-board">
+    <h1>😱 You Win!</h1>
+    <img src="img/won.gif" class="gif" width="450px" height="300px" alt="You Won!">
+    <h3>Your final score: <span id="final-score"></span></h3>
+    <a href="/index.html"><button id="play-again-button"><h3>Play Again</h3></button></a>
+    
+    <script>
+    // Obtener el puntaje final del almacenamiento local y mostrarlo
+    document.getElementById('final-score').innerText = localStorage.getItem('finalScore');
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    </script>
+</body>
+</html>

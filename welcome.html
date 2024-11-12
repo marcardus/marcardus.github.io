@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+      <div id="perfil">
+        <h2>🎲 Welcome to Memory Game!</h2>
+        <img src="img/start game.gif" class="gif" alt="Start Game">
+        <label for="difficulty"><h3>Choose level:</h3></label>
+    
+        <!-- Selector de nivel -->
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <div id="start-game-container">
+        <div id= "start-game-button">
+          <a href="/index.html"><button id="start-game"><h3>Start Game</h3></button></a>
+        </div>
+      </div>
+
+        <div class="copyright">
+          <p>© Developed by Mar C.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Escucha el evento de clic en el botón "Start Game"
+      document.getElementById("start-game").addEventListener("click", () => {
+        const selectedLevel = document.getElementById("difficulty").value;
+        // Guarda el nivel seleccionado en localStorage
+        localStorage.setItem("difficulty", selectedLevel);
+        document.getElementById("background-sound").loop = true;
+      });
+    </script>
+     <audio id="background-sound" autoplay loop>
+       <source src="/sound/background-sound.mp3" type="audio/mpeg">
+       <source src="/sound/background-sound.ogg" type="audio/ogg">
+       <source src="/sound/background-sound.wav" type="audio/wav">
+    </audio>
+    <label for="volume-control">Volumen de fondo:</label>
+    <input type="range" id="volume-control" min="0" max="1" step="0.2" value="0.2">
+
+    <script>
+        // Selecciona el elemento de audio y el control deslizante
+        const backgroundAudio = document.getElementById("background-sound");
+        const volumeControl = document.getElementById("volume-control");
+
+        // Ajusta el volumen inicial del audio
+        backgroundAudio.volume = volumeControl.value;
+
+        // Añade el evento input para ajustar el volumen en tiempo real
+        volumeControl.addEventListener("input", (event) => {
+            backgroundAudio.volume = event.target.value;
+        });
+    </script>
+  </body>
+</html>

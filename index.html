@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+  <div id="game-board">
+    <h3>Time: <span id="timer">60</span> seconds</h3>
+  </div>
+    <div id="estadisticas">
+      <h2>😱Score: <span id="score">0</span></h3>
+      <h3>🤟‍ Pairs clicked: <span id="pairs-clicked">0</span></h3>
+      <h3>🎉 Pairs guessed: <span id="pairs-guessed">0</span></h3>
+    </div>
+  </div>
+
+  <div id="memory-board"></div>
+  <script src="/src/script.js"></script>
+  <script src="/src/memory.js"></script>
+  <script src="/src/index.js"></script>
+  <audio id="background-sound" autoplay loop hidden>
+    <source src="/sound/background-sound.mp3" type="audio/mpeg">
+    <source src="/sound/background-sound.ogg" type="audio/ogg">
+    <source src="/sound/background-sound.wav" type="audio/wav">
+ </audio>
+ <label for="volume-control"></label>
+    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.2">
+
+    <script>
+        // Selecciona el elemento de audio y el control deslizante
+        const backgroundAudio = document.getElementById("background-sound");
+        const volumeControl = document.getElementById("volume-control");
+
+        // Ajusta el volumen inicial del audio
+        backgroundAudio.volume = volumeControl.value;
+
+        // Añade el evento input para ajustar el volumen en tiempo real
+        volumeControl.addEventListener("input", (event) => {
+            backgroundAudio.volume = event.target.value;
+        });
+    </script>
+</body>
+</html>
+
+

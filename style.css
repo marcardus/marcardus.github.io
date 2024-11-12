@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+body {
+  margin:0;
+
+  background: url('../img/background.jpg') no-repeat;
+  background-size: cover;
+  font-family: "Oswald", sans-serif;
+}
+.gif{
+  margin: auto;
+  position: flex;
+  padding: 5%;
+  display: list-item;
+  align-self: center;
+  width: 250px;
+  height: 150px;
+  border border-radius: 25px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.4)
+
+}
+
+.dropdown{
+
+  display: inline-block;
+  align: center;
+  text-align: center;
+  position: relative;
+}
+#game-board {
+  background: #4a2997;
+  width: 800px;
+  height: 20px;
+  padding: 20px;
+  margin: 0px auto;
+  border-radius: 84px;
+  box-shadow: inset 0px 0px 20px -6px #615961;
+}
+#container{
+  display: inline-block;
+  align: center;
+  width: 1600px;
+  text-align: center;
+  position: relative;
+}
+
+#memory-board {
+  background: #19c2d8;
+  width: 820px;
+  height: 540px;
+  padding: 70px;
+  margin: 0px auto;
+  border-radius: 84px;
+  box-shadow: inset 0px 0px 20px -6px #615961;
+}
+#estadisticas {
+  background: #7d97dd;
+  width: 700px;
+  height: 60px;
+  padding: 70px;
+  margin: auto;
+  border-radius: 40px;
+  box-shadow: inset 0px 0px 20px 0px #615961;
+}
+.card {
+  display: inline-block;
+  perspective: 300px;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.turned {
+  pointer-events: none;
+}
+
+.card.turned .front {
+  transform: rotateY(0deg);
+}
+.card.turned .back {
+  transform: rotateY(180deg);
+}
+
+.card .back,
+.card .front {
+  position: relative;
+  align-content: center;
+  width: 71px;
+  height: 71px;
+  margin: 10px;
+  padding: 20px;
+  font-size: 64px;
+  transition: transform 0.6s ease;
+}
+
+.card .back {
+  align-content: center;
+  background: url('../img/pattern_chevron.jpg') no-repeat;
+}
+
+.card .front {
+  position: absolute;
+  align-content: center;
+  left: 0;
+  top: 0;
+  transform: rotateY(-180deg) translateZ(1px);
+  backface-visibility: hidden;
+}
+
+
+h1 {
+  margin: 0;
+  color: rgba(215, 40, 148, 0.9);
+  font-weight: bolder;
+  font-size: 75px;
+  text-align: center;
+  text-shadow: 0px 0px 20px #969696;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  color: #881265;
+  font-weight:absolute;
+  font-size: 35px;
+  text-align: center;
+  text-shadow: 1px red;
+}
+
+h3 {
+  margin: 0;
+  color: #456783;
+  font-weight: bolder;
+  justify-content: center;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 1px red;
+}
+
+a {
+  margin-top: 0;
+  color: #456783;
+  display: flex;
+  font-weight: bolder;
+  font-size: 25px;
+  text-align: center;
+  text-shadow: 1px red;
+  justify-content: center;
+}
+
+p {
+  font-weight: bolder;
+  color: white
+  font-size: 20px;
+  text-align: center;
+}
+
+label{
+  margin: auto;
+  color: rgb(255, 127, 197);
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px;
+
+}
+
+#perfil {
+  padding: 10px 20px;
+  display: block; /* Cambia a block para usar margin auto */
+  margin: 0 auto; /* Centra horizontalmente */
+  font-size: 20px;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 25px;
+}
+#level {
+  margin: auto;
+  color: rgb(54, 50, 51);
+  padding: 0.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30
+  px;
+
+}
+
+#button {
+  margin: auto;;
+  color: aquamarine;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+#start-game {
+  margin: auto;
+  color: rgb(54, 50, 51);
+  padding: 0.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30
+  px;
+}
+
+#start-button {
+  margin: auto;
+  color: rgb(54, 50, 51);
+  padding: 0.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30
+  px;
+}
+select#difficulty {
+    padding: 20px 20px;
+    display: flex; /* Cambia a block para usar margin auto */
+    margin: 0 auto; /* Centra horizontalmente */
+    font-size: 30px;
+    align-items: center;
+    cursor: pointer;
+    background-color: #72586a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  #start-game-button {
+    margin: auto;
+    color: rgb(54, 50, 51);
+    padding: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30
+    px;
+  }
+  #start-game-container {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 30vh;            /* Ocupa toda la altura de la pantalla */
+    width: 100vw;  
+  }
+#restart-button{
+  margin: auto;
+  padding: 10px 20px;
+  width: 200px;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-right: 10rem
+  
+
+}
+
+#start-button:hover, #restart-button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position:absolute;
+  width: 100 %;
+  overflow: auto;
+  box-shadow: 0px 8px 16px rgba (0,0,0,0.2)
+}
+.dropdown:hover .dropdown-content {
+  display:block;
+}
+img {
+  margin:auto;
+  position: relative;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  align-self: center;
+  width: 50px;
+  height: 200px;
+  border border-radius: 25px;
+
+}
